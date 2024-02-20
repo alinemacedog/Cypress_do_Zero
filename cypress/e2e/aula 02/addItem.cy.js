@@ -1,4 +1,4 @@
-import telaInicial from '../support/pageObjects/tela-inicial.page'
+import telaInicial from '../../support/pageObjects/tela-inicial.page'
 
 describe('Adicionar itens na minha lista ToDo', () => {
     
