@@ -14,8 +14,7 @@ describe('Adicionar itens na minha lista ToDo', () => {
         var todoItens = ["Maça", "Banana", "Melancia"]
         todoItens.forEach(function(item, indice,array){
             telaInicial.inputText(item)
-        })
-        
+        }) 
     })
   
 

@@ -3,6 +3,7 @@ const concluirItem = require('../elements/tela-inicial.elements').ITENS
 const filtroItem = require('../elements/tela-inicial.elements').FILTROS
 
 class telaInicial{
+
     inputText(dado){
         cy.get(elem.inputToDo).type(dado).type('{enter}')
     }
@@ -16,9 +17,20 @@ class telaInicial{
     }
 
     deletarItem(){
-        cy.get(concluirItem.listaItens).first().find('button').invoke('show')
+        cy.get(concluirItem.listaItens).first().find('button').invoke('show').click()
     }
 
+    validarInput(texto){
+        cy.get(elem.inputToDo).should('have.attr', 'placeholder').and('include', texto)
+    }
+
+    validarContador(numero){
+        cy.get(filtroItem.contador).find('strong').contains(numero)
+    }
+
+    validarSize(numero){
+        cy.get(concluirItem.validarListaItens).should('have.length', numero)
+    }
 
 }
 
